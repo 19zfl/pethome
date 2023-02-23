@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="pethome@localhost" uuid="885d975f-b845-4615-ac69-d53e375d38d4">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/pethome</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="GMT+8" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zfl19.org.mapper.EmployeeMapper">
+
+    <select id="getAllManager" resultType="com.zfl19.org.domain.Employee">
+        select distinct te.* from t_employee te left join t_department td on te.id = td.manager_id
+    </select>
+
+</mapper>

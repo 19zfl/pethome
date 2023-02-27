@@ -17,4 +17,6 @@ public class BaseQuery {
     @ApiModelProperty(value = "每页条数")
     private Integer pageSize;   // 每页条数
 
+    private Long[] ids;     // 批量删除接受参数
+
 }

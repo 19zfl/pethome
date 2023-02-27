@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zfl19.org.mapper.DepartmentMapper">
+
+    <select id="getAllDept" resultType="com.zfl19.org.domain.Department">
+        select td.*,te.username managerName,td1.name parentName from t_department td
+        left join t_employee te on te.id = td.manager_id
+        left join t_department td1 on td.parent_id = td1.id
+        <where>
+            <if test="name != null and name != ''">
+                and td.name like concat('%',#{name},'%')
+            </if>
+            <if test="managerId != null and managerId != ''">
+                and td.manager_id = #{managerId}
+            </if>
+            <if test="parentId != null and parentId != ''">
+                and td.parent_id = #{parentId}
+            </if>
+        </where>
+    </select>
+    <select id="getParentDept" resultType="com.zfl19.org.domain.Department">
+        select *
+        from t_department
+        where id in
+              (select parent_id from t_department)
+    </select>
+    <select id="selectByParentId" resultType="com.zfl19.org.domain.Department">
+        select td.id from t_department td where td.parent_id = #{id}
+    </select>
+
+</mapper>

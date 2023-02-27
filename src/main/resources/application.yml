@@ -23,3 +23,7 @@ logging:
   level:
     com:
       zfl19:debug
+# 开启mybatis驼峰转换
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

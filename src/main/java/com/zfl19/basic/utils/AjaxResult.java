@@ -24,7 +24,7 @@ public class AjaxResult {
      * 请求成功返回的数据
      * @return
      */
-    public static AjaxResult createSucces() {
+    public static AjaxResult createSuccess() {
         return new AjaxResult("0000", true, "操作成功", null);
     }
 
@@ -32,7 +32,7 @@ public class AjaxResult {
      * 请求成功返回的数据
      * @return
      */
-    public static AjaxResult createSucces(Object obj) {
+    public static AjaxResult createSuccess(Object obj) {
         return new AjaxResult("0000", true, "操作成功", obj);
     }
 

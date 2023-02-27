@@ -3,6 +3,7 @@ package com.zfl19.org.service;
 import com.zfl19.basic.query.BaseQuery;
 import com.zfl19.basic.query.PageList;
 import com.zfl19.org.domain.Department;
+import com.zfl19.org.query.DepartmentQuery;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface IDepartmentService {
     List<Department> getAll();
 
     // 分页查询
-    PageList<Department> getAllByPage(BaseQuery baseQuery);
+    PageList<Department> getAllByPage(DepartmentQuery departmentQuery);
 
     // 根据主键删除数据
     void delete(Long id);
@@ -23,4 +24,12 @@ public interface IDepartmentService {
     // 新增和修改的联合方法
     void saveOrUpdate(Department department);
 
+    // 批量删除
+    void delBatch(BaseQuery baseQuery);
+
+    // 新增表单里上级部门树
+    List<Department> treeDept();
+
+    // 高级查询父级部门列表
+    List<Department> getParentDept();
 }

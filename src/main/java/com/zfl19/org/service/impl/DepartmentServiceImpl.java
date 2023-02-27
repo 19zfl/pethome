@@ -48,10 +48,11 @@ public class DepartmentServiceImpl implements IDepartmentService {
         List<Department> departments = departmentMapper.selectByParentId(id);
         if (department1.getParentId() == null) {
             // 表示此部门是顶级部门,直接删除
+            // 这里删除是删除的没有parentId的,此部门为顶级部门没有上级部门
             departmentMapper.deleteByPrimaryKey(id);
         }
         // 判断根据参数id当做parentId查询的数据是否为空
-        if (departments != null && departments.size() > 0) {
+        if (departments.size() > 1) {
             // 遍历集合
             for (Department department : departments) {
                 // 删除parentId为参数id的数据

@@ -1,20 +1,19 @@
 package com.zfl19.org.domain;
 
+import com.zfl19.basic.domain.BaseDomain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "t_employee")
-public class Employee {
+public class Employee extends BaseDomain {
 
-    @Id
-    private Long id;
+    // id来自继承
     private String username;
     private String email;
     private String phone;

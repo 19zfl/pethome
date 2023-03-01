@@ -1,6 +1,7 @@
 package com.zfl19.org.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.zfl19.basic.domain.BaseDomain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,12 +16,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "t_department")
-public class Department {
+public class Department extends BaseDomain {
 
-    // 部门id
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)     //  新增数据之后自动返回当前新增数据的id
-    private Long id;
+    // 部门id => 来自继承
+
     // 部门编号
     @Size(min = 3, max = 6, message = "不合适!")       // 长度校验
     private String sn;

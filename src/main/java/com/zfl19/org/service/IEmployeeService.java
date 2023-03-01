@@ -2,6 +2,7 @@ package com.zfl19.org.service;
 
 import com.zfl19.basic.query.BaseQuery;
 import com.zfl19.basic.query.PageList;
+import com.zfl19.basic.service.IBaseService;
 import com.zfl19.org.domain.Employee;
 
 import java.util.List;
@@ -9,10 +10,9 @@ import java.util.List;
 /**
  * 员工业务层
  */
-public interface IEmployeeService {
+public interface IEmployeeService extends IBaseService<Employee, BaseQuery> {
 
-    // 查询所有
-    List<Employee> getAll();
+    // 查询所有 => 来自继承
 
     // 分页查询
     PageList<Employee> getAllByPage(BaseQuery baseQuery);

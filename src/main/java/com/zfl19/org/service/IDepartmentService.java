@@ -2,6 +2,7 @@ package com.zfl19.org.service;
 
 import com.zfl19.basic.query.BaseQuery;
 import com.zfl19.basic.query.PageList;
+import com.zfl19.basic.service.IBaseService;
 import com.zfl19.org.domain.Department;
 import com.zfl19.org.query.DepartmentQuery;
 
@@ -10,10 +11,9 @@ import java.util.List;
 /**
  * 部门业务层
  */
-public interface IDepartmentService {
+public interface IDepartmentService extends IBaseService<Department, BaseQuery> {
 
-    // 查询所有
-    List<Department> getAll();
+    // 查询所有 => 来自继承
 
     // 分页查询
     PageList<Department> getAllByPage(DepartmentQuery departmentQuery);
